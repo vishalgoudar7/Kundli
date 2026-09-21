@@ -1,0 +1,2 @@
+import { ExternalLink } from 'lucide-react';
+export default function NorthIndianChart({title,subtitle,houses=[]}){const get=n=>houses.find(h=>Number(h.house)===n)||{};return <section className="panel chart-panel"><div className="panel-heading"><div><h2>{title}</h2><p>{subtitle}</p></div><button>View Details <ExternalLink size={13}/></button></div><div className="north-chart">{[1,2,3,4,5,6,7,8,9,10,11,12].map(n=>{const h=get(n);return <div className={`house h${n}`} key={n}><b>{n}</b><span>{h.sign||'—'}</span><em>{(h.planets||[]).join(' · ')}</em></div>})}</div></section>}

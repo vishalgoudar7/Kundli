@@ -1,0 +1,3 @@
+import { useState } from 'react';
+export default function DashaTimeline({data}){const [open,setOpen]=useState(null);return <section className="card"><h2>Vimshottari Dasha Timeline</h2><div className="timeline">{data.mahadashas?.map((m,i)=><div className="period" key={i}><button className="period-head" onClick={()=>setOpen(open===i?null:i)}><b>{m.lord}</b><span>{year(m.start)} — {year(m.end)}</span></button>{open===i&&<div className="antar">{m.antardashas?.map((a,j)=><div key={j}><b>{m.lord}/{a.lord}</b><span>{date(a.start)} → {date(a.end)}</span></div>)}</div>}</div>)}</div></section>}
+const year=d=>new Date(d).getFullYear(); const date=d=>new Date(d).toLocaleDateString();
