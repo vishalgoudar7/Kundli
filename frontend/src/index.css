@@ -19,3 +19,8 @@ a{color:inherit;text-decoration:none}.app-shell{min-height:100vh}.app-nav{margin
   background-position:center;
   background-size:100% 100%;
 }
+
+/* Reference-style North Indian chart (D1 and D9 only). */
+.reference-chart{height:336px;position:relative;border:1.6px solid #ff7a32;margin-top:14px;background:#fff;overflow:hidden}.reference-chart-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.reference-chart-lines path{fill:none;stroke:#ff7a32;stroke-width:.42;vector-effect:non-scaling-stroke}.reference-house{position:absolute;z-index:1;text-align:center;transform:translate(-50%,-50%);min-width:52px;line-height:1.05}.reference-house>b{display:block;color:#272727;font-size:13px}.chart-planets{display:flex;justify-content:center;align-items:flex-start;flex-wrap:wrap;gap:2px 6px;margin-top:5px;max-width:126px}.chart-planets span{font-size:16px;font-weight:700;line-height:1}.chart-planets .sun,.chart-planets .mars,.chart-planets .saturn,.chart-planets .uranus{color:#ed2424}.chart-planets .moon{color:#a8a5ff}.chart-planets .mercury,.chart-planets .venus{color:#23792c}.chart-planets .jupiter{color:#bf52ca}.chart-planets .ketu{color:#b78a44}.chart-planets .node{color:#22284f}.rh1{left:50%;top:20%}.rh2{left:28%;top:9%}.rh3{left:11%;top:25%}.rh4{left:22%;top:50%}.rh5{left:11%;top:75%}.rh6{left:28%;top:91%}.rh7{left:50%;top:80%}.rh8{left:72%;top:91%}.rh9{left:89%;top:75%}.rh10{left:78%;top:50%}.rh11{left:89%;top:25%}.rh12{left:72%;top:9%}
+@media(max-width:1200px){.reference-chart{height:320px}}
+@media(max-width:820px){.reference-chart{height:330px}}
