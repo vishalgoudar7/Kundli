@@ -1,6 +1,7 @@
-import axios from 'axios';
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-export async function generateKundli(data) {
-  const response = await axios.post(`${API_URL}/kundli`, data);
-  return response.data;
-}
+import api from './api.js';
+export const createKundli = async data => (await api.post('/kundli', data)).data;
+export const getKundlis = async () => (await api.get('/kundli')).data;
+export const getKundli = async id => (await api.get(`/kundli/${id}`)).data;
+export const updateKundli = async (id, data) => (await api.put(`/kundli/${id}`, data)).data;
+export const deleteKundli = async id => (await api.delete(`/kundli/${id}`)).data;
+export const generateKundli = createKundli;
