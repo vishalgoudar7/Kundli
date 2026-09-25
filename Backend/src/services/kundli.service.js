@@ -3,6 +3,7 @@ import { calculateAstronomy } from '../astrology/ephemeris.js';
 import { enrichPlanet, signFromLongitude } from '../astrology/vedic.js';
 import { groupByHouse } from '../astrology/chart.js';
 import { generateNavamsaChart } from '../astrology/navamsa.js';
+import { calculatePanchanga } from '../astrology/panchanga.js';
 
 import {
   calculateVimshottariDasha,
@@ -156,6 +157,25 @@ export async function generateKundli(input) {
     throw error;
   }
 
+  const sun =
+    planets.find(
+      (planet) =>
+        planet.name === 'Sun'
+    );
+
+  if (!sun) {
+    const error = new Error('Sun position not found');
+    error.status = 500;
+    throw error;
+  }
+
+  const panchanga = calculatePanchanga({
+    sunLongitude: sun.longitude,
+    moonLongitude: moon.longitude,
+    utc,
+    timezone: input.timezone
+  });
+
 
   // ------------------------------------
   // VIMSHOTTARI DASHA
@@ -253,6 +273,10 @@ export async function generateKundli(input) {
       // Current Mahadasha
       // + Antardasha
       currentDasha,
+
+
+      // Birth Panchanga
+      panchanga,
 
 
       // Calculation engine

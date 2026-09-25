@@ -6,7 +6,7 @@ import CreateKundli from './pages/CreateKundli.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import EditKundli from './pages/EditKundli.jsx';
 import KundliView from './pages/KundliView.jsx';
-import Login from './pages/Login.jsx';
+import Login from './pages/HoroscopeLogin.jsx';
 import Register from './pages/Register.jsx';
 
 function HomeRedirect() {

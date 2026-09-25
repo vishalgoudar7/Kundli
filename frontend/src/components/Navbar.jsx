@@ -10,6 +10,6 @@ export default function Navbar() {
     <nav className={`app-nav ${open ? 'open' : ''}`}>{isAuthenticated ? <>
       <NavLink to="/dashboard" onClick={close}>Dashboard</NavLink><NavLink className="nav-create" to="/kundli/new" onClick={close}><Plus size={16}/> Create Kundli</NavLink>
       <span className="nav-user">{user?.name}</span><button className="logout-button" onClick={() => { close(); logout(); }}><LogOut size={16}/> Logout</button>
-    </> : <><NavLink to="/login" onClick={close}>Login</NavLink><NavLink to="/register" onClick={close}>Create account</NavLink></>}</nav>
+    </> : <><span className="new-user-copy">New to Jyotish?</span><NavLink to="/register" onClick={close}>Create account</NavLink></>}</nav>
   </header>;
 }
